@@ -1,0 +1,51 @@
+public class ShapeArea {
+    private static double ask(Scanner scanner, String prompt) {
+        System.out.print(prompt);
+        return scanner.nextDouble();
+}
+    private static void rectangle(Scanner scanner) {
+        double length = ask(scanner, "Please enter the length of the rectangle: ");
+        double width = ask(scanner, "Please enter the width of the rectangle: ");
+        System.out.println(length * width);
+    }
+    private static void square(Scanner scanner) {
+        double side = ask(scanner, "Please enter the side length of the square: ");
+        
+        System.out.println(side * side);
+    }
+    private static void circle(Scanner scanner) {
+        double radius = ask(scanner, "Please enter the radius of the circle: ");
+        
+        System.out.println(radius * radius * 3.14);
+    }
+    private static void triangle(Scanner scanner) {
+        double height = ask(scanner, "Please enter the perpendicular height of the triangle: ");
+        double base = ask(scanner, "Please enter base length of triangle: ");
+        System.out.println((base*height)/ 2);
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Area Calculator!\n " +
+            "Enter 1 to find the area of a Rectangle,\n " +
+            "Enter 2 to find the area of a Square,\n " +            
+            "Enter 3 to find the area of a Circle\n "+
+            "Enter 4 to find the area of a triangle");
+
+        switch (scanner.nextInt()) {
+          case 1:
+            rectangle(scanner);
+            break;
+          case 2:
+            square(scanner);
+            break;
+          case 3:
+           circle(scanner);
+            break;
+          case 4:
+              triangle(scanner);
+               break;
+          
+        }
+    }
+}
