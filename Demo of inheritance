@@ -1,0 +1,18 @@
+class SoftwareDev {
+   String designation = "Software Developer";
+   String collegeName = "NUIG";
+   void currently(){
+	System.out.println("Job Seeking");
+   }
+}
+
+public class Me extends SoftwareDev{
+   String previous = "Mechanical Engineering";
+   public static void main(String args[]){
+	Me obj = new Me();
+	System.out.println(obj.collegeName);
+	System.out.println(obj.designation);
+	System.out.println(obj.previous);
+	obj.currently();
+   }
+}
