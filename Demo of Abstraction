@@ -1,0 +1,98 @@
+abstract class Shape  
+{ 
+    String colour; 
+      
+    // these are abstract methods 
+    abstract double area(); 
+    public abstract String toString(); 
+      
+    // abstract class can have constructor 
+    public Shape(String colour) { 
+        //System.out.println("Shape constructor called"); 
+        this.colour = colour; 
+    } 
+      
+    // this is a concrete method 
+    public String getColour() { 
+        return colour; 
+    } 
+} 
+class Circle extends Shape 
+{ 
+    double radius; 
+      
+    public Circle(String colour,double radius) { 
+  
+        // calling Shape constructor 
+        super(colour); 
+        System.out.println("Circle constructor called"); 
+        this.radius = radius; 
+    } 
+  
+    @Override
+    double area() { 
+        return Math.PI * Math.pow(radius, 2); 
+    } 
+  
+    @Override
+    public String toString() { 
+        return "Circle colour is " + super.colour +  
+                       " and area is : " + area(); 
+    }      
+} 
+class Square extends Shape 
+{ 
+    double side; 
+      
+    public Square(String colour,double side) { 
+  
+        // calling Shape constructor 
+        super(colour); 
+        System.out.println("Square constructor called"); 
+        this.side = side; 
+    }   
+    @Override
+    double area() { 
+        return side*side; 
+    }  
+    @Override
+    public String toString() { 
+        return "Square colour is " + super.colour +  
+                       " and area is : " + area(); 
+    }      
+} 
+class Rectangle extends Shape{ 
+  
+    double length; 
+    double width; 
+      
+    public Rectangle(String colour,double length,double width) { 
+        // calling Shape constructor 
+        super(colour); 
+        System.out.println("Rectangle constructor called"); 
+        this.length = length; 
+        this.width = width; 
+    }       
+    @Override
+    double area() { 
+        return length*width; 
+    }  
+    @Override
+    public String toString() { 
+        return "Rectangle colour is " + super.colour +  
+                           " and area is : " + area(); 
+    }  
+} 
+public class AbstractionDemo  
+{ 
+    public static void main(String[] args) 
+    { 
+        Shape s1 = new Circle("Blue", 2.2); 
+        Shape s2 = new Rectangle("Green", 2, 4); 
+        Shape s3 = new Square("White", 4);
+          
+        System.out.println(s1.toString()); 
+        System.out.println(s2.toString()); 
+        System.out.println(s3.toString()); 
+    } 
+} 
